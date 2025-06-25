@@ -6,9 +6,13 @@
     "moduleDetection": "force",
     "isolatedModules": true,
     "skipLibCheck": true,
-    // "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
 
     "strict": true,
     "noUncheckedIndexedAccess": true,
