@@ -1,5 +1,6 @@
-import { prisma } from '@/lib/prisma.js';
 import { hash } from 'bcryptjs';
+
+import { prisma } from '@/lib/prisma.js';
 
 interface RegisterUseCaseRequest {
   name: string;

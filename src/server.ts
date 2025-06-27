@@ -8,4 +8,6 @@ app
   })
   .then(() => {
     console.log('HTTP Server running🔥');
+  }).catch((error: unknown) => {
+    console.log(error)
   });
