@@ -8,7 +8,7 @@ let checkInsRepository: InMemoryCheckInsRepository;
 let sut: GetUserMetricsUseCase;
 
 describe('Ger User Metrics Use Case', () => {
-  beforeEach(async () => {
+  beforeEach(() => {
     checkInsRepository = new InMemoryCheckInsRepository();
     sut = new GetUserMetricsUseCase(checkInsRepository);
   });
