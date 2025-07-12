@@ -7,7 +7,8 @@
     "dev": "tsx watch src/server.ts",
     "start": "node build/server.cjs",
     "build": "tsup src --out-dir build",
-    "test": "vitest",
+    "test": "vitest --project unit",
+    "test:e2e": "vitest --project e2e",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui"
   },
