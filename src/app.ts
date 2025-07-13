@@ -3,6 +3,7 @@ import fastify, { type FastifyReply, type FastifyRequest } from 'fastify';
 import { ZodError } from 'zod';
 
 import { env } from './env/env.js';
+import { checkInsRoutes } from './http/controllers/check-ins/routes.js';
 import { gymsRoutes } from './http/controllers/gyms/routes.js';
 import { usersRoutes } from './http/controllers/users/routes.js';
 
@@ -14,6 +15,7 @@ app.register(fastifyJwt, {
 
 app.register(usersRoutes);
 app.register(gymsRoutes);
+app.register(checkInsRoutes);
 
 app.setErrorHandler(
   (error: unknown, _: FastifyRequest, reply: FastifyReply) => {
