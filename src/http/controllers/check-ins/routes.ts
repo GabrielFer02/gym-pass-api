@@ -1,6 +1,7 @@
 import type { FastifyInstance } from 'fastify';
 
 import { verifyJwt } from '@/http/middlewares/verify-jwt.js';
+import { verifyUserRole } from '@/http/middlewares/verify-user-role.js';
 
 import { create } from './create.js';
 import { history } from './history.js';
@@ -14,5 +15,9 @@ export function checkInsRoutes(app: FastifyInstance) {
   app.get('/check-ins/metrics', metrics);
 
   app.post('/gyms/:gymId/check-ins', create);
-  app.patch('/check-ins/:checkInId/validate', validate);
+  app.patch(
+    '/check-ins/:checkInId/validate',
+    { onRequest: [verifyUserRole('ADMIN')] },
+    validate,
+  );
 }
